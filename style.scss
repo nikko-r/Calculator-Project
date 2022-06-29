@@ -1,0 +1,90 @@
+$bg-color: #272727;
+$numpad-color-red: #FF9393;
+$numpad-color-blue-1: #4A83C8;
+$numpad-color-blue-2: #62A9FC;
+$numpad-color-blue-3: #0085FF;
+$numpad-color-grey: #626262;
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    height: 100vh;
+    width: 100vh;
+    background-color: $bg-color;
+}
+
+main {
+    height: 100vh;
+    width: 100vh;
+}
+
+.numpad-grid {
+    position: center;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-row: 1/6;
+    grid-column: 1/5;
+    gap: 0.5rem;
+    background-color: #272727;
+}
+
+.numpad {
+    .numpad__button-brackets {
+        >* {
+            width: 1rem;
+            height: 2.5rem;
+            align-items: center;
+            margin: 0 0.05rem 0 0.05rem;
+            background-color: $numpad-color-blue-1;
+        }
+    }
+    .numpad__button {
+        width: 2.5rem;
+        height: 2.5rem;
+        &--0,
+        &--1,
+        &--2,
+        &--3,
+        &--4,
+        &--5,
+        &--6,
+        &--7,
+        &--8,
+        &--9,
+        &--dot,
+        &--del {
+            background-color: $numpad-color-grey;
+        }
+        &--clear {
+            background-color: $numpad-color-red;
+        }
+        &--percent {
+            background-color: $numpad-color-blue-1;
+        }
+        &--divide,
+        &--times,
+        &--minus,
+        &--add {
+            background-color: $numpad-color-blue-2;
+        }
+        &--equals {
+            background-color: $numpad-color-blue-3;
+        }
+    }
+}
+
+.button-animation-1 {
+    border: 0 solid white;
+    border-radius: 50px;
+    transition-duration: 200ms;
+    &:active {
+        border-radius: 5px;
+        transition-duration: 100ms;
+    }
+}

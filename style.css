@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  width: 100vh;
+  background-color: #272727;
+}
+
+main {
+  height: 100vh;
+  width: 100vh;
+}
+
+.numpad-grid {
+  position: center;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-row: 1/6;
+  grid-column: 1/5;
+  gap: 0.5rem;
+  background-color: #272727;
+}
+
+.numpad .numpad__button-brackets > * {
+  width: 1rem;
+  height: 2.5rem;
+  align-items: center;
+  margin: 0 0.05rem 0 0.05rem;
+  background-color: #4A83C8;
+}
+.numpad .numpad__button {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.numpad .numpad__button--0, .numpad .numpad__button--1, .numpad .numpad__button--2, .numpad .numpad__button--3, .numpad .numpad__button--4, .numpad .numpad__button--5, .numpad .numpad__button--6, .numpad .numpad__button--7, .numpad .numpad__button--8, .numpad .numpad__button--9, .numpad .numpad__button--dot, .numpad .numpad__button--del {
+  background-color: #626262;
+}
+.numpad .numpad__button--clear {
+  background-color: #FF9393;
+}
+.numpad .numpad__button--percent {
+  background-color: #4A83C8;
+}
+.numpad .numpad__button--divide, .numpad .numpad__button--times, .numpad .numpad__button--minus, .numpad .numpad__button--add {
+  background-color: #62A9FC;
+}
+.numpad .numpad__button--equals {
+  background-color: #0085FF;
+}
+
+.button-animation-1 {
+  border: 0 solid white;
+  border-radius: 50px;
+  transition-duration: 200ms;
+}
+.button-animation-1:active {
+  border-radius: 5px;
+  transition-duration: 100ms;
+}/*# sourceMappingURL=style.css.map */
