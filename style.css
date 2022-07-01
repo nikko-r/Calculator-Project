@@ -11,21 +11,63 @@ body {
   background-color: #272727;
 }
 
-.numpad-grid {
-  position: absolute;
-  bottom: 0;
-  margin: 7vw;
+.screen {
+  background-color: #292929;
+  height: 30vh;
+  width: 90vw;
+  margin: 1rem;
+  font-size: 25vw;
+  text-align: right;
+  text-transform: uppercase;
+  border-radius: 10px;
+  word-wrap: break-word;
+  white-space: initial;
+}
+
+.special-buttons-grid {
   justify-items: center;
   align-items: center;
   width: auto;
-  height: 45vh;
+  display: grid;
+  gap: 10vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-row: 1/2;
+  grid-column: 1/5;
+  margin: 5%;
+}
+
+.special-buttons {
+  border: 0 solid white;
+  border-radius: 10vw;
+  transition-duration: 200ms;
+}
+.special-buttons:active {
+  border-radius: 2vw;
+  transition-duration: 200ms;
+}
+.special-buttons--menu {
+  background-color: #FFF6A7;
+  width: 15vw;
+  height: 7vw;
+}
+.special-buttons--pi, .special-buttons--root, .special-buttons--topower {
+  background-color: #4A83C8;
+  width: 15vw;
+  height: 15vw;
+}
+
+.numpad-grid {
+  justify-items: center;
+  align-items: center;
+  width: auto;
+  height: auto;
   display: grid;
   gap: 2vw;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-row: 1/6;
   grid-column: 1/5;
-  background-color: #272727;
 }
 
 .numpad .numpad__button-brackets {
@@ -33,15 +75,29 @@ body {
   height: 20vw;
 }
 .numpad .numpad__button-brackets > * {
+  border: 0 solid white;
+  border-radius: 10vw;
+  transition-duration: 200ms;
   width: 7vw;
   height: 20vw;
   align-items: center;
   margin: 0 1vw 0 1vw;
   background-color: #4A83C8;
 }
+.numpad .numpad__button-brackets > *:active {
+  border-radius: 2vw;
+  transition-duration: 200ms;
+}
 .numpad .numpad__button {
+  border: 0 solid white;
+  border-radius: 10vw;
+  transition-duration: 200ms;
   width: 20vw;
   height: 20vw;
+}
+.numpad .numpad__button:active {
+  border-radius: 2vw;
+  transition-duration: 200ms;
 }
 .numpad .numpad__button--0, .numpad .numpad__button--1, .numpad .numpad__button--2, .numpad .numpad__button--3, .numpad .numpad__button--4, .numpad .numpad__button--5, .numpad .numpad__button--6, .numpad .numpad__button--7, .numpad .numpad__button--8, .numpad .numpad__button--9, .numpad .numpad__button--dot, .numpad .numpad__button--del {
   background-color: #626262;
@@ -57,14 +113,4 @@ body {
 }
 .numpad .numpad__button--equals {
   background-color: #0085FF;
-}
-
-.button-animation-1 {
-  border: 0 solid white;
-  border-radius: 10vw;
-  transition-duration: 200ms;
-}
-.button-animation-1:active {
-  border-radius: 2vw;
-  transition-duration: 200ms;
 }/*# sourceMappingURL=style.css.map */
