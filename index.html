@@ -11,41 +11,43 @@
 
 <body>
     <main class="calculator-body-grid">
-        <section class="screen">
+        <section>
+            <input class="screen" type="text">
         </section>
-        <section class="special-buttons">
-            <button class="special-buttons special-buttons--button-menu" type="button"></button>
-            <button class="special-buttons special-buttons--button-pi" type="button"></button>
-            <button class="special-buttons special-buttons--button-topower" type="button"></button>
-            <button class="special-buttons special-buttons--button-root" type="button"></button>
+        <section class="special-buttons-grid special-buttons">
+            <button id="b-menu" class="special-buttons special-buttons--menu" type="button"></button>
+            <button id="b-pi" class="special-buttons special-buttons--pi" type="button">π</button>
+            <button id="b-root" class="special-buttons special-buttons--root" type="button">√</button>
+            <button id="b-topower" class="special-buttons special-buttons--topower" type="button">^</button>
         </section>
 
         <section class="numpad-grid numpad">
-            <button class="button-animation-1 numpad__button numpad__button--clear" type="button">C</button>
+            <button id="b-clear" class="numpad__button numpad__button--clear" type="button">C</button>
             <div class="numpad__button-brackets">
-                <button class="button-animation-1 numpad__button-brackets numpad__button-brackets--ob" type="button">(</button>
-                <button class="button-animation-1 numpad__button-brackets numpad__button-brackets--cb" type="button">)</button>
+                <button id="b-ob" class="numpad__button-brackets numpad__button-brackets--ob" type="button">(</button>
+                <button id="b-cb" class="numpad__button-brackets numpad__button-brackets--cb" type="button">)</button>
             </div>
-            <button class="button-animation-1 numpad__button numpad__button--percent" type="button">%</button>
-            <button class="button-animation-1 numpad__button numpad__button--divide" type="button">/</button>
-            <button class="button-animation-1 numpad__button numpad__button--7" type="button">7</button>
-            <button class="button-animation-1 numpad__button numpad__button--8" type="button">8</button>
-            <button class="button-animation-1 numpad__button numpad__button--9" type="button">9</button>
-            <button class="button-animation-1 numpad__button numpad__button--times" type="button">X</button>
-            <button class="button-animation-1 numpad__button numpad__button--4" type="button">4</button>
-            <button class="button-animation-1 numpad__button numpad__button--5" type="button">5</button>
-            <button class="button-animation-1 numpad__button numpad__button--6" type="button">6</button>
-            <button class="button-animation-1 numpad__button numpad__button--minus" type="button">-</button>
-            <button class="button-animation-1 numpad__button numpad__button--1" type="button">1</button>
-            <button class="button-animation-1 numpad__button numpad__button--2" type="button">2</button>
-            <button class="button-animation-1 numpad__button numpad__button--3" type="button">3</button>
-            <button class="button-animation-1 numpad__button numpad__button--add" type="button">+</button>
-            <button class="button-animation-1 numpad__button numpad__button--0" type="button">0</button>
-            <button class="button-animation-1 numpad__button numpad__button--dot" type="button">.</button>
-            <button class="button-animation-1 numpad__button numpad__button--del" type="button">del</button>
-            <button class="button-animation-1 numpad__button numpad__button--equals" type="button">=</button>
+            <button id="b-percent" class="numpad__button numpad__button--percent" type="button">%</button>
+            <button id="b-divide" class="numpad__op numpad__button numpad__button--divide" type="button">/</button>
+            <button id="b-7" class="numpad__num numpad__button numpad__button--7" type="button">7</button>
+            <button id="b-8" class="numpad__num numpad__button numpad__button--8" type="button">8</button>
+            <button id="b-9" class="numpad__num numpad__button numpad__button--9" type="button">9</button>
+            <button id="b-times" class="numpad__op numpad__op numpad__button numpad__button--times" type="button">X</button>
+            <button id="b-4" class="numpad__num numpad__button numpad__button--4" type="button">4</button>
+            <button id="b-5" class="numpad__num numpad__button numpad__button--5" type="button">5</button>
+            <button id="b-6" class="numpad__num numpad__button numpad__button--6" type="button">6</button>
+            <button id="b-minus" class="numpad__op numpad__button numpad__button--minus" type="button">-</button>
+            <button id="b-1" class="numpad__num numpad__button numpad__button--1" type="button">1</button>
+            <button id="b-2" class="numpad__num numpad__button numpad__button--2" type="button">2</button>
+            <button id="b-3" class="numpad__num numpad__button numpad__button--3" type="button">3</button>
+            <button id="b-plus" class="numpad__op numpad__button numpad__button--add" type="button">+</button>
+            <button id="b-0" class="numpad__num numpad__button numpad__button--0" type="button">0</button>
+            <button id="b-dot" class="numpad__button numpad__button--dot" type="button">.</button>
+            <button id="b-del" class="numpad__button numpad__button--del" type="button">del</button>
+            <button id="b-equals" class="numpad__button numpad__button--equals" type="button">=</button>
         </section>
     </main>
+    <script src="./script.js"></script>
 </body>
 
 </html>

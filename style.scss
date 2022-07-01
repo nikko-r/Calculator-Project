@@ -1,9 +1,21 @@
+@mixin button-animation-1 {
+    border: 0 solid white;
+    border-radius: 10vw;
+    transition-duration: 200ms;
+    &:active {
+        border-radius: 2vw;
+        transition-duration: 200ms;
+    }
+}
+
 $bg-color: #272727;
+$numpad-color-yellow: #FFF6A7;
 $numpad-color-red: #FF9393;
 $numpad-color-blue-1: #4A83C8;
 $numpad-color-blue-2: #62A9FC;
 $numpad-color-blue-3: #0085FF;
 $numpad-color-grey: #626262;
+$numpad-color-grey-2: #292929;
 * {
     margin: 0;
     padding: 0;
@@ -17,23 +29,70 @@ body {
     background-color: $bg-color;
 }
 
-main {}
+// .calculator-body-grid {
+//     justify-items: center; //!IMPORTANT centers the child elements in the grid
+//     align-items: center; //!IMPORTANT centers the child elements in the grid
+//     max-width: 100vw;
+//     height: 100vh;
+//     display: grid;
+//     grid-template-columns: 1fr;
+//    grid-template-rows: 2fr 1fr 5fr;
+//    grid-row: 1/4;
+//    grid-column: 1/2;
+//}
+.screen {
+    background-color: $numpad-color-grey-2;
+    height: 30vh;
+    width: 90vw;
+    margin: 1rem;
+    font-size: 25vw;
+    text-align: right;
+    text-transform: uppercase;
+    border-radius: 10px;
+    word-wrap: break-word;
+    white-space: initial;
+}
 
-.numpad-grid {
-    position: absolute;
-    bottom: 0;
-    margin: 7vw;
+.special-buttons-grid {
     justify-items: center; //!IMPORTANT centers the child elements in the grid
     align-items: center; //!IMPORTANT centers the child elements in the grid
     width: auto;
-    height: 45vh;
+    display: grid;
+    gap: 10vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-row: 1/2;
+    grid-column: 1/5;
+    margin: 5%;
+}
+
+.special-buttons {
+    @include button-animation-1;
+    &--menu {
+        background-color: $numpad-color-yellow;
+        width: 15vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
+        height: 7vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle   
+    }
+    &--pi,
+    &--root,
+    &--topower {
+        background-color: $numpad-color-blue-1;
+        width: 15vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
+        height: 15vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
+    }
+}
+
+.numpad-grid {
+    justify-items: center; //!IMPORTANT centers the child elements in the grid
+    align-items: center; //!IMPORTANT centers the child elements in the grid
+    width: auto;
+    height: auto;
     display: grid;
     gap: 2vw;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-row: 1/6;
     grid-column: 1/5;
-    background-color: #272727;
 }
 
 .numpad {
@@ -41,6 +100,7 @@ main {}
         width: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
         height: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
         >* {
+            @include button-animation-1;
             width: 7vw;
             height: 20vw;
             align-items: center;
@@ -49,6 +109,7 @@ main {}
         }
     }
     .numpad__button {
+        @include button-animation-1;
         width: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
         height: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
         &--0,
@@ -83,12 +144,12 @@ main {}
     }
 }
 
-.button-animation-1 {
-    border: 0 solid white;
-    border-radius: 10vw;
-    transition-duration: 200ms;
-    &:active {
-        border-radius: 2vw;
-        transition-duration: 200ms;
-    }
-}
+// .button-animation-1 {
+//     border: 0 solid white;
+//     border-radius: 10vw;
+//     transition-duration: 200ms;
+//     &:active {
+//         border-radius: 2vw;
+//         transition-duration: 200ms;
+//     }
+// }
