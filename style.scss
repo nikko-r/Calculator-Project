@@ -40,17 +40,34 @@ body {
 //    grid-row: 1/4;
 //    grid-column: 1/2;
 //}
-.screen {
+.screen-display {
     background-color: $numpad-color-grey-2;
     height: 30vh;
     width: 90vw;
     margin: 1rem;
-    font-size: 25vw;
-    text-align: right;
-    text-transform: uppercase;
+    border: 2 solid black;
     border-radius: 10px;
     word-wrap: break-word;
     white-space: initial;
+}
+
+.screen {
+    border: 0 solid white;
+    background-color: $numpad-color-grey-2;
+    &--output {
+        height: 10vh;
+        width: 90vw;
+        font-size: 5vw;
+        text-align: left;
+        color: #626262;
+    }
+    &--input {
+        height: 20vh;
+        width: 90vw;
+        font-size: 15vw;
+        text-align: right;
+        color: white;
+    }
 }
 
 .special-buttons-grid {

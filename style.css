@@ -11,17 +11,34 @@ body {
   background-color: #272727;
 }
 
-.screen {
+.screen-display {
   background-color: #292929;
   height: 30vh;
   width: 90vw;
   margin: 1rem;
-  font-size: 25vw;
-  text-align: right;
-  text-transform: uppercase;
+  border: 2 solid black;
   border-radius: 10px;
   word-wrap: break-word;
   white-space: initial;
+}
+
+.screen {
+  border: 0 solid white;
+  background-color: #292929;
+}
+.screen--output {
+  height: 10vh;
+  width: 90vw;
+  font-size: 5vw;
+  text-align: left;
+  color: #626262;
+}
+.screen--input {
+  height: 20vh;
+  width: 90vw;
+  font-size: 15vw;
+  text-align: right;
+  color: white;
 }
 
 .special-buttons-grid {
