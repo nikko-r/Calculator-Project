@@ -15,11 +15,15 @@ const bEquals = document.querySelector("#b-equals")
 const outputScreen = document.querySelector("#output-screen")
 const inputScreen = document.querySelector("#input-screen")
 
+let valueNum1 = ""
+let valueNum2 = ""
+let valueOp = ""
 
 //bNumbers.forEach(bNumbers.addEventListener("click", ))
 
 console.dir(bNumbers)
-    /////////////////////// HANDLES EVERY NUMBER KEY PRESS //////////
+
+/////////////////////// HANDLES EVERY NUMBER KEY PRESS //////////
 
 bNumbers.forEach((numberButton) => { //for each element in the class
     console.dir(numberButton) //send the element info in console
@@ -34,20 +38,25 @@ bNumbers.forEach((numberButton) => { //for each element in the class
 /////////////////////// HANDLES EVERY OPERATOR KEY PRESS //////////
 
 bOperators.forEach((operatorButton) => { //for each element in the class
-    console.dir(operatorButton) //send the element info in console
+    //console.dir(operatorButton) //send the element info in console
     operatorButton.addEventListener("click", (event) => {
-        console.log("Clicked")
-        console.log(event.target.innerHTML)
-        inputScreen.value += event.target.innerHTML
-
+        valueNum1 = inputScreen.value
+        valueOp = event.target.innerHTML
+            //inputScreen.value += event.target.innerHTML
+        outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
+        inputScreen.value = ""
     })
 })
 
+//const letVar1EqualValue1 = 
 
 //////////////////////////////////////////// CLEAR SCREEN
 const handleClearScreen = (event) => {
     outputScreen.value = ""
     inputScreen.value = ""
+    valueNum1 = ""
+    valueNum2 = ""
+    valueOp = ""
 }
 bClear.addEventListener("click", handleClearScreen)
 
@@ -84,7 +93,7 @@ bPercent.addEventListener("click", handlePercentChar)
 //When theres a click on a button 
 //Found what the value was 
 //Logged it to the console
-//TODO: 
+// TODO: 
 //1 get the number the user just pressed and dioplay on the screem 
 //If they press another number also get it to add to the end of the calc display 
 //Wehn they press either + - / or * then they have finished with the first number 

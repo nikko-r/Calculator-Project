@@ -113,18 +113,19 @@ body {
 }
 
 .numpad {
-    .numpad__button-brackets {
-        width: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
-        height: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
-        >* {
-            @include button-animation-1;
-            width: 7vw;
-            height: 20vw;
-            align-items: center;
-            margin: 0 1vw 0 1vw;
-            background-color: $numpad-color-blue-1;
-        }
-    }
+    // #Phased out brackets
+    // .numpad__button-brackets {
+    //     width: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
+    //     height: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
+    //     >* {
+    //         @include button-animation-1;
+    //         width: 7vw;
+    //         height: 20vw;
+    //         align-items: center;
+    //         margin: 0 1vw 0 1vw;
+    //         background-color: $numpad-color-blue-1;
+    //     }
+    // }
     .numpad__button {
         @include button-animation-1;
         width: 20vw; //if 100% Makes the size the max size of the grid section. Change to a static size to keep it circle
@@ -146,7 +147,8 @@ body {
         &--clear {
             background-color: $numpad-color-red;
         }
-        &--percent {
+        &--percent,
+        &--negative {
             background-color: $numpad-color-blue-1;
         }
         &--divide,

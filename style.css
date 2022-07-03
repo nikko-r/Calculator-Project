@@ -87,24 +87,6 @@ body {
   grid-column: 1/5;
 }
 
-.numpad .numpad__button-brackets {
-  width: 20vw;
-  height: 20vw;
-}
-.numpad .numpad__button-brackets > * {
-  border: 0 solid white;
-  border-radius: 10vw;
-  transition-duration: 200ms;
-  width: 7vw;
-  height: 20vw;
-  align-items: center;
-  margin: 0 1vw 0 1vw;
-  background-color: #4A83C8;
-}
-.numpad .numpad__button-brackets > *:active {
-  border-radius: 2vw;
-  transition-duration: 200ms;
-}
 .numpad .numpad__button {
   border: 0 solid white;
   border-radius: 10vw;
@@ -122,7 +104,7 @@ body {
 .numpad .numpad__button--clear {
   background-color: #FF9393;
 }
-.numpad .numpad__button--percent {
+.numpad .numpad__button--percent, .numpad .numpad__button--negative {
   background-color: #4A83C8;
 }
 .numpad .numpad__button--divide, .numpad .numpad__button--times, .numpad .numpad__button--minus, .numpad .numpad__button--add {
