@@ -3,7 +3,8 @@ const bPi = document.querySelector("#b-pi")
 const bRoot = document.querySelector("#b-root")
 const bTopower = document.querySelector("#b-topower")
 const bClear = document.querySelector("#b-clear")
-const bBrackets = document.querySelector("#b-ob #b-cb")
+    //const bBrackets = document.querySelector("#b-ob #b-cb")
+const bNegative = document.querySelector("#b-negative")
 const bPercent = document.querySelector("#b-percent")
 const bNumbers = document.querySelectorAll(".numpad__num")
 const bOperators = document.querySelectorAll(".numpad__op")
@@ -23,6 +24,30 @@ let valueOp = ""
 
 console.dir(bNumbers)
 
+
+
+
+const calculateTotal = (num1, operator, num2) => {
+    if (operator == "+") {
+        num1 = num1 + num2
+    } else if (operator == "-") {
+        num1 = num1 - num2
+    } else if (operator == "X") {
+        num1 = num1 * num2
+    } else if (operator == "/") {
+        num1 = num1 / num2
+    }
+    valueNum1 = num1
+    inputScreen.value == ""
+    outputScreen.value == `${valueNum1}`
+
+    valueNum2 = ""
+    valueOp = ""
+}
+
+getShepardsMessage("night", "delight")
+
+
 /////////////////////// HANDLES EVERY NUMBER KEY PRESS //////////
 
 bNumbers.forEach((numberButton) => { //for each element in the class
@@ -40,15 +65,29 @@ bNumbers.forEach((numberButton) => { //for each element in the class
 bOperators.forEach((operatorButton) => { //for each element in the class
     //console.dir(operatorButton) //send the element info in console
     operatorButton.addEventListener("click", (event) => {
-        valueNum1 = inputScreen.value
-        valueOp = event.target.innerHTML
-            //inputScreen.value += event.target.innerHTML
-        outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
-        inputScreen.value = ""
+        if (inputScreen.value != "") {
+            valueNum1 = inputScreen.value
+            valueOp = event.target.innerHTML
+                //inputScreen.value += event.target.innerHTML
+            outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
+            inputScreen.value = ""
+        } else {
+            alert("no number to work with")
+        }
     })
 })
 
 //const letVar1EqualValue1 = 
+
+//////////////////////////////////////////// NEGATIVE NUMBER
+const handleNegativeNum = (event) => {
+    if (inputScreen.value.startsWith("-")) {
+        inputScreen.value = inputScreen.value.substring(1) //Substring removes characters at the start of a string
+    } else {
+        inputScreen.value = `-${inputScreen.value}`
+    }
+}
+bNegative.addEventListener("click", handleNegativeNum)
 
 //////////////////////////////////////////// CLEAR SCREEN
 const handleClearScreen = (event) => {
@@ -69,7 +108,9 @@ bDel.addEventListener("click", handleDelChar)
 ///////////////////////////////////////////// ADD A DOT
 
 const handleDotChar = (event) => {
-    if (inputScreen.value.slice(0, -1) != ".") {
+    if (inputScreen.value.includes(".")) {
+        alert("Number is already a decimal.")
+    } else {
         inputScreen.value += "."
     }
 }
@@ -87,6 +128,9 @@ const handlePercentChar = (event) => {
 bPercent.addEventListener("click", handlePercentChar)
 
 /////////////////////////////////////////////
+
+
+
 
 //get The contents of innerhtml and paste into text box
 
