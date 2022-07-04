@@ -28,6 +28,10 @@ console.dir(bNumbers)
 
 
 const calculateTotal = () => {
+    // valueNum1.replaceAll('%', `/100`)
+    // valueNum2.replaceAll('%', `/100`)
+    console.log(`logged ${valueNum1}`)
+    console.log(`logged ${valueNum2}`)
     valueNum1 = parseFloat(valueNum1) //Converts both values from strings to numbers
     valueNum2 = parseFloat(valueNum2)
     if (valueOp == "+") { // calculating the values
@@ -42,11 +46,13 @@ const calculateTotal = () => {
     outputScreen.value = "" //Resetting the top screen
     inputScreen.value = `${valueNum1}` //setting the bottom screen to the total value which is saved as the first value for working with the next number
 
-    valueNum2 = "" //resetting the second vbalue as that is the new value the user will input
+    valueNum2 = "" //resetting the second value as that is the new value the user will input
     valueOp = "" //resetting the operator for the next calculation
 }
 
-
+function containsNumber(str) { //function to check if a string has a number
+    return /\d/.test(str);
+}
 
 /////////////////////// HANDLES EVERY NUMBER KEY PRESS //////////
 
@@ -65,6 +71,9 @@ bNumbers.forEach((numberButton) => { //for each element in the class
 bOperators.forEach((operatorButton) => { //for each element in the class
     //console.dir(operatorButton) //send the element info in console
     operatorButton.addEventListener("click", (event) => {
+        if (containsNumber(inputScreen.value) == false) {
+            return alert("There is no number to work with!")
+        }
         if (inputScreen.value != "") { //if the input sceen has information on it
             if (valueNum1 == "") { //if the first value(var) is not set then we need to work with setting the first value before the second value
                 valueNum1 = inputScreen.value //set the first value(var) to the number on the bottom(input) screen
@@ -86,7 +95,19 @@ bOperators.forEach((operatorButton) => { //for each element in the class
     })
 })
 
-//const letVar1EqualValue1 = 
+//////////////////////////////////////////// EQUALS BUTTON
+const handleSumTotal = (event) => {
+    if (containsNumber(inputScreen.value) == false) {
+        return alert("There is no number to work with!")
+    }
+    valueNum2 = inputScreen.value //set the second value(var) to the contents of the bottom screen(input)
+    calculateTotal() //calculate the results
+    valueNum1 = ""
+    valueNum2 = ""
+    valueOp = ""
+
+}
+bEquals.addEventListener("click", handleSumTotal)
 
 //////////////////////////////////////////// NEGATIVE NUMBER
 const handleNegativeNum = (event) => {
@@ -193,3 +214,20 @@ bPercent.addEventListener("click", handlePercentChar)
 // const 0B Click = (event) => {
 
 // }
+
+
+
+document.addEventListener('keypress', (event) => {
+        var name = event.key;
+        var code = event.code;
+        if (name === 'c') {
+            // Do nothing.
+            handleClearScreen()
+        }
+    })
+    // if (event.ctrlKey) {
+    //   alert(`Combination of ctrlKey + ${name} \n Key code Value: ${code}`);
+    // } else {
+    //   alert(`Key pressed ${name} \n Key code Value: ${code}`);
+    // }
+    //   }, false);
