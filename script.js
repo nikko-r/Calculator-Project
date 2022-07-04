@@ -27,25 +27,25 @@ console.dir(bNumbers)
 
 
 
-const calculateTotal = (num1, operator, num2) => {
-    if (operator == "+") {
-        num1 = num1 + num2
-    } else if (operator == "-") {
-        num1 = num1 - num2
-    } else if (operator == "X") {
-        num1 = num1 * num2
-    } else if (operator == "/") {
-        num1 = num1 / num2
+const calculateTotal = () => {
+    valueNum1 = parseFloat(valueNum1)
+    valueNum2 = parseFloat(valueNum2)
+    if (valueOp == "+") {
+        valueNum1 = valueNum1 + valueNum2
+    } else if (valueOp == "-") {
+        valueNum1 = valueNum1 - valueNum2
+    } else if (valueOp == "X") {
+        valueNum1 = valueNum1 * valueNum2
+    } else if (valueOp == "/") {
+        valueNum1 = valueNum1 / valueNum2
     }
-    valueNum1 = num1
-    inputScreen.value == ""
-    outputScreen.value == `${valueNum1}`
+    outputScreen.value = ""
+    inputScreen.value = `${valueNum1}`
 
     valueNum2 = ""
     valueOp = ""
 }
 
-getShepardsMessage("night", "delight")
 
 
 /////////////////////// HANDLES EVERY NUMBER KEY PRESS //////////
@@ -66,11 +66,19 @@ bOperators.forEach((operatorButton) => { //for each element in the class
     //console.dir(operatorButton) //send the element info in console
     operatorButton.addEventListener("click", (event) => {
         if (inputScreen.value != "") {
-            valueNum1 = inputScreen.value
-            valueOp = event.target.innerHTML
-                //inputScreen.value += event.target.innerHTML
-            outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
-            inputScreen.value = ""
+            if (valueNum1 == "") {
+                valueNum1 = inputScreen.value
+                valueOp = event.target.innerHTML
+                    //inputScreen.value += event.target.innerHTML
+                outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
+                inputScreen.value = ""
+            } else {
+                valueNum2 = inputScreen.value
+                calculateTotal()
+                outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
+                valueOp = event.target.innerHTML
+                inputScreen.value = ""
+            }
         } else {
             alert("no number to work with")
         }
