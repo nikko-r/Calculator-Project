@@ -28,9 +28,9 @@ console.dir(bNumbers)
 
 
 const calculateTotal = () => {
-    valueNum1 = parseFloat(valueNum1)
+    valueNum1 = parseFloat(valueNum1) //Converts both values from strings to numbers
     valueNum2 = parseFloat(valueNum2)
-    if (valueOp == "+") {
+    if (valueOp == "+") { // calculating the values
         valueNum1 = valueNum1 + valueNum2
     } else if (valueOp == "-") {
         valueNum1 = valueNum1 - valueNum2
@@ -39,11 +39,11 @@ const calculateTotal = () => {
     } else if (valueOp == "/") {
         valueNum1 = valueNum1 / valueNum2
     }
-    outputScreen.value = ""
-    inputScreen.value = `${valueNum1}`
+    outputScreen.value = "" //Resetting the top screen
+    inputScreen.value = `${valueNum1}` //setting the bottom screen to the total value which is saved as the first value for working with the next number
 
-    valueNum2 = ""
-    valueOp = ""
+    valueNum2 = "" //resetting the second vbalue as that is the new value the user will input
+    valueOp = "" //resetting the operator for the next calculation
 }
 
 
@@ -65,21 +65,22 @@ bNumbers.forEach((numberButton) => { //for each element in the class
 bOperators.forEach((operatorButton) => { //for each element in the class
     //console.dir(operatorButton) //send the element info in console
     operatorButton.addEventListener("click", (event) => {
-        if (inputScreen.value != "") {
-            if (valueNum1 == "") {
-                valueNum1 = inputScreen.value
-                valueOp = event.target.innerHTML
+        if (inputScreen.value != "") { //if the input sceen has information on it
+            if (valueNum1 == "") { //if the first value(var) is not set then we need to work with setting the first value before the second value
+                valueNum1 = inputScreen.value //set the first value(var) to the number on the bottom(input) screen
+                valueOp = event.target.innerHTML //setting the operator variable to the text contained in the html button
                     //inputScreen.value += event.target.innerHTML
-                outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
-                inputScreen.value = ""
-            } else {
-                valueNum2 = inputScreen.value
-                calculateTotal()
-                outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}`
-                valueOp = event.target.innerHTML
-                inputScreen.value = ""
+                outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}` //set the top screen (output) to the number that was in the bottom screen and include the operator. This screen is for visuals only and not for grabbing data
+                inputScreen.value = "" //reset the bottom screen to display nothing
+                    //when a user wants to calculate continuosly and doesnt press equals but presses a new operator
+            } else { //if the first value is set
+                valueNum2 = inputScreen.value //set the second value(var) to the contents of the bottom screen(input)
+                calculateTotal() //calculate the results
+                outputScreen.value = `${inputScreen.value} ${event.target.innerHTML}` //set the top screen(output) to the NEW calculated first value(var) and include the new operator
+                valueOp = event.target.innerHTML //set the operator value(var) to the text contained in the html button
+                inputScreen.value = "" //Reset the bottom screen(input) for the next value to calculate
             }
-        } else {
+        } else { //if the input screen has no information on it
             alert("no number to work with")
         }
     })
