@@ -23,10 +23,10 @@ body {
 .screen-display {
   background-color: #292929;
   height: 150px;
-  width: 400px;
-  margin: 1rem;
+  width: 300px;
   border: 2 solid black;
   border-radius: 10px;
+  margin: 2rem;
 }
 
 .screen {
@@ -46,6 +46,7 @@ body {
   font-size: 2rem;
   text-align: right;
   color: white;
+  margin-top: 1rem;
 }
 
 .special-buttons-grid {
@@ -92,6 +93,7 @@ body {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-row: 1/6;
   grid-column: 1/5;
+  margin-top: 3rem;
 }
 
 .numpad .numpad__button {

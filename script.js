@@ -28,8 +28,8 @@ console.dir(bNumbers)
 
 
 const calculateTotal = () => {
-    // valueNum1.replaceAll('%', `/100`)
-    // valueNum2.replaceAll('%', `/100`)
+    valueNum1.replaceAll('%', '/100')
+    valueNum2.replaceAll('%', '/100')
     console.log(`logged ${valueNum1}`)
     console.log(`logged ${valueNum2}`)
     valueNum1 = parseFloat(valueNum1) //Converts both values from strings to numbers
@@ -40,7 +40,7 @@ const calculateTotal = () => {
         valueNum1 = valueNum1 - valueNum2
     } else if (valueOp == "X") {
         valueNum1 = valueNum1 * valueNum2
-    } else if (valueOp == "/") {
+    } else if (valueOp == "➗") {
         valueNum1 = valueNum1 / valueNum2
     }
     outputScreen.value = "" //Resetting the top screen
@@ -218,16 +218,17 @@ bPercent.addEventListener("click", handlePercentChar)
 
 
 document.addEventListener('keypress', (event) => {
-        var name = event.key;
-        var code = event.code;
-        if (name === 'c') {
-            // Do nothing.
-            handleClearScreen()
-        }
-    })
-    // if (event.ctrlKey) {
-    //   alert(`Combination of ctrlKey + ${name} \n Key code Value: ${code}`);
-    // } else {
-    //   alert(`Key pressed ${name} \n Key code Value: ${code}`);
-    // }
-    //   }, false);
+    var name = event.key;
+    var code = event.code;
+    if (name === 'c') {
+        handleClearScreen()
+    }
+})
+
+
+// if (event.ctrlKey) {
+//   alert(`Combination of ctrlKey + ${name} \n Key code Value: ${code}`);
+// } else {
+//   alert(`Key pressed ${name} \n Key code Value: ${code}`);
+// }
+//   }, false);
