@@ -28,8 +28,8 @@ console.dir(bNumbers)
 
 
 const calculateTotal = () => {
-    valueNum1.replaceAll('%', '/100')
-    valueNum2.replaceAll('%', '/100')
+    //    valueNum1.replaceAll('%', '/100') //doesnt work bugs out the calculator
+    //    valueNum2.replaceAll('%', '/100')
     console.log(`logged ${valueNum1}`)
     console.log(`logged ${valueNum2}`)
     valueNum1 = parseFloat(valueNum1) //Converts both values from strings to numbers
